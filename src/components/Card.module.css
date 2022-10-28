@@ -1,0 +1,130 @@
+.card {
+    text-align: center;
+    border: #363434 1px solid;
+    margin: 10px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    box-shadow: 0 4px 8px 0 rgba(122, 111, 111, 0.2);
+    transition: box-shadow 300ms;
+}
+
+.cardExpanded {
+    text-align: center;
+    border: #363434 1px solid;
+    border-radius: 3px;
+    flex-direction: column;
+    gap: 50px;
+    box-shadow: 0 4px 8px 0 rgba(122, 111, 111, 0.2);
+    width: 100%
+
+}
+
+.cardExpanded .header .headerTitle {
+    color: black;
+    margin: auto;
+}
+
+.cardExpanded .cancelIcon {
+    font: normal 11px/1 Arial, sans-serif;
+    cursor: pointer;
+    margin: 5px 0 0 5px;
+
+}
+
+.cardExpanded .cancelIcon:before {
+    content: '\2716';
+}
+
+.itemDetails {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 500px) {
+    .itemDetails {
+        flex-direction: row;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card:active{
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.cardExpanded .cardImage .imgItem {
+    padding: 40px 0;
+    height: 150px;
+}
+
+.cardExpanded .cardDetails {
+    align-self: center;
+}
+
+.cardImage {
+    align-self: center;
+    max-width: 150px;
+}
+
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+
+.imgItem {
+    min-width: 70px;
+}
+
+
+.itemPrice {
+    display: flex;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.itemId {
+    display: flex;
+    font-size: 10px;
+    align-self: center;
+    font-family: monospace;
+    white-space: nowrap;
+}
+
+.cardExpanded .itemPrice {
+    display: flex;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.cardExpanded .itemId {
+    display: flex;
+    font-size: 16px;
+    align-self: center;
+    padding: 20px;
+    font-family: monospace;
+}
+
+.cardExpanded .buyLink {
+    text-decoration-line: none;
+    margin: auto 5px auto 0;
+    color: black;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.cardExpanded .header {
+    display: flex;
+    flex-direction: row;
+    background-color: lightgrey;
+}

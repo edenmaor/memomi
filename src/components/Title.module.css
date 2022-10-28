@@ -1,0 +1,31 @@
+.title {
+    text-align: center;
+    background: black;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.title h1 {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: normal;
+
+}
+
+.title h2 {
+    color: white;
+    margin-top: 10%;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.imgLogo {
+    display: flex;
+    background-color: black;
+
+}
+.logoLink{
+    width: fit-content;
+}
