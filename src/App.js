@@ -32,7 +32,7 @@ function App() {
                 }
 
 
-            <Carousel numItemsToShow={3}>
+                <Carousel numItemsToShow={3} isFinite={true}>
                     {
                         data.Data.map((item) => {
                             return (

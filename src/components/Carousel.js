@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import styles from'./Carousel.module.css'
 
 const Carousel = (props) => {
-    const {children, numItemsToShow, cardSelected} = props
+    const {children, numItemsToShow, cardSelected, isFinite} = props
     const [startingIndex, setStartingIndex] = useState(0);
 
+    const endOfContent = children.length - numItemsToShow;
 
     const next = () => {
         const arrLength = children.length;
@@ -29,7 +30,6 @@ const Carousel = (props) => {
             return array;
         }
 
-        // cyclic behaviour
         if (startingIndex > (array.length - slicedArrayLength)) {
             return [...(array.slice(startingIndex, array.length)),
                 ...array.slice(0, slicedArrayLength - (array.length - startingIndex))];
@@ -38,12 +38,12 @@ const Carousel = (props) => {
     }
 
     return (<div className={styles.carouselContainer} onClick={cardSelected}>
-            <button onClick={prev} className={styles.leftArrow}/>
+            <button onClick={prev} className={isFinite && startingIndex === 0 ? styles.hiddenLeft : styles.leftArrow}/>
             <div className={styles.carouselContent}>
                 {cyclicSlicedArray(children, startingIndex, numItemsToShow)}
             </div>
 
-            <button onClick={next} className={styles.rightArrow}/>
+            <button onClick={next} className={isFinite && endOfContent <= startingIndex ? styles.hiddenRight : styles.rightArrow}/>
         </div>)
 
 }
